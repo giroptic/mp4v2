@@ -44,6 +44,16 @@ IPodUUIDAtom::IPodUUIDAtom(MP4File &file)
     AddProperty(value);
 }
 
+SphericalVideoUUIDAtom::SphericalVideoUUIDAtom(MP4File &file, const char *value)
+    : MP4Atom(file, "uuid") {
+  static uint8_t spatial_media_magic[] = {0xff, 0xcc, 0x82, 0x63, 0xf8, 0x55,
+                                          0x4a, 0x93, 0x88, 0x14, 0x58, 0x7a,
+                                          0x02, 0x52, 0x1f, 0xdd};
+  SetExtendedType(spatial_media_magic);
+  MP4StringProperty *property = new MP4StringProperty(*this, "value");
+  property->SetValue(value, 0);
+  AddProperty(property);
+}
 ///////////////////////////////////////////////////////////////////////////////
 
 }

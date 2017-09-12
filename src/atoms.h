@@ -699,6 +699,15 @@ private:
     IPodUUIDAtom &operator= ( const IPodUUIDAtom &src );
 };
 
+class SphericalVideoUUIDAtom : public MP4Atom {
+ public:
+  SphericalVideoUUIDAtom(MP4File &file, const char*value);
+ private:
+  SphericalVideoUUIDAtom();
+  SphericalVideoUUIDAtom( const SphericalVideoUUIDAtom &src );
+  SphericalVideoUUIDAtom &operator= ( const SphericalVideoUUIDAtom &src );
+};
+
 class MP4NmhdAtom : public MP4Atom {
 public:
     MP4NmhdAtom(MP4File &file);

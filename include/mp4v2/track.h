@@ -446,6 +446,20 @@ bool MP4AddIPodUUID(
     MP4FileHandle hFile,
     MP4TrackId    trackId );
 
+/**
+ * Add Spherical Video global metadata sample.
+ * @see
+ * https://github.com/google/spatial-media/blob/master/docs/spherical-video-rfc.md
+ *
+ * @param hFile handle of file for operation.
+ * @param trackId id of track for operation.
+ * @param value the spatial media xml description.
+ * @return <b>true</b> on success, <b>false</b> on failure.
+ */
+MP4V2_EXPORT bool MP4AddSphericalVideoUUID(
+  MP4FileHandle hFile,
+  MP4TrackId trackId,
+  const char *value);
 /** @} ***********************************************************************/
 
 #endif /* MP4V2_TRACK_H */
