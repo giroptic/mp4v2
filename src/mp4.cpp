@@ -4458,6 +4458,62 @@ MP4FileHandle MP4ReadProvider( const char* fileName, const MP4FileProvider* file
         return false;
     }
 
+    bool MP4AddSphericalVideoUUID(MP4FileHandle hFile, MP4TrackId trackId,
+                                  const char *value) {
+      if (!MP4_IS_VALID_FILE_HANDLE(hFile))
+        return false;
+      
+      MP4Track *track = NULL;
+      
+      try {
+        track = ((MP4File *)hFile)->GetTrack(trackId);
+        ASSERT(track);
+      } catch (Exception *x) {
+        mp4v2::impl::log.errorf(*x);
+        delete x;
+        return false;
+      } catch (...) {
+        mp4v2::impl::log.errorf("%s: failed", __FUNCTION__);
+        return false;
+      }
+
+      SphericalVideoUUIDAtom *sphericalvideo_uuid = NULL;
+      try {
+        sphericalvideo_uuid = new SphericalVideoUUIDAtom(*(MP4File *)hFile, value);
+      } catch (std::bad_alloc) {
+        mp4v2::impl::log.errorf("%s: unable to allocate IPodUUIDAtom",
+                                __FUNCTION__);
+      } catch (Exception *x) {
+        mp4v2::impl::log.errorf(*x);
+        delete x;
+        return false;
+      } catch (...) {
+        mp4v2::impl::log.errorf(
+            "%s: unknown exception constructing IPodUUIDAtom", __FUNCTION__);
+        return false;
+      }
+
+      try {
+        ASSERT(sphericalvideo_uuid);
+        track->GetTrakAtom().AddChildAtom(sphericalvideo_uuid);
+        return true;
+      } catch (Exception *x) {
+        delete sphericalvideo_uuid;
+        sphericalvideo_uuid = NULL;
+        mp4v2::impl::log.errorf(*x);
+        delete x;
+        return false;
+      } catch (...) {
+        delete sphericalvideo_uuid;
+        sphericalvideo_uuid = NULL;
+        mp4v2::impl::log.errorf("%s: unknown exception adding IPodUUIDAtom",
+                                __FUNCTION__);
+        return false;
+      }
+      
+      return false;
+    }
+
 ///////////////////////////////////////////////////////////////////////////////
 
 bool MP4GetTrackLanguage(
