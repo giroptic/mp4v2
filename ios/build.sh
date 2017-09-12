@@ -2,7 +2,7 @@
 
 ROOT=`pwd`
 SOURCE="$ROOT/.."
-IOS_DEPLOY_TGT="9.0"
+IOS_DEPLOY_TGT="8.0"
 
 FAT="$ROOT/fat"
 THIN="$ROOT/thin"
@@ -12,7 +12,8 @@ LIBFILE="libmp4v2.a"
 
 
 ARCHS="i386 x86_64 arm64 armv7 armv7s"
-CONFIGURE_FLAGS="--disable-gch --disable-debug --disable-util \
+#DEBUG="--disable-debug"
+CONFIGURE_FLAGS="--disable-gch $DEBUG --disable-util \
                   --enable-shared=no"
 
 clean()
