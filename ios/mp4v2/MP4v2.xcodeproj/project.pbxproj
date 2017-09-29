@@ -277,7 +277,7 @@
 		36B59A2F1F62E2660099F894 /* text.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = text.h; sourceTree = "<group>"; };
 		36B59A301F62E2660099F894 /* util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
 		36B59A361F62E2980099F894 /* MP4v2_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MP4v2_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		36B59A391F62E2980099F894 /* MP4v2_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MP4v2_iOS.h; sourceTree = "<group>"; };
+		36B59A391F62E2980099F894 /* MP4v2_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MP4v2_iOS.h; path = ../../MP4v2_iOS.h; sourceTree = "<group>"; };
 		36B59A3A1F62E2980099F894 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36B59A8F1F62E8130099F894 /* config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		36B59A901F62E8130099F894 /* config.h.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = config.h.in; sourceTree = "<group>"; };
