@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.version   = '2.1.0'
   s.summary   = "MP4v2 is a C/C++ framework to manipulate or create MP4 files."
   s.homepage  = 'http://www.giroptic.com'
-  s.license   = { :type => 'MIT', :file => 'LICENSE' }
+  s.license   = { :type => 'MOZILLA', :file => 'COPYING' }
   s.platform  = :ios
   s.authors   = { 'GIROPTIC' => 'support@giroptic.com' }
   s.source           = { :git => 'https://github.com/giroptic/mp4v2.git', :branch => 'develop' }
