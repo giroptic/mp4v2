@@ -1,0 +1,6 @@
+framework module MP4v2_iOS {
+  umbrella header "MP4v2_iOS.h"
+
+  export *
+  module * { export * }
+}

@@ -56,6 +56,7 @@ Pod::Spec.new do |s|
     'CLANG_CXX_LIBRARY' => 'libc++',
     'HEADER_SEARCH_PATHS' => '$(PODS_TARGET_SRCROOT) $(PODS_TARGET_SRCROOT)/include'
   }
+  s.module_map = 'MP4v2_iOS.modulemap'
   s.prepare_command = <<-CMD
     cp -f ios/project.h include/mp4v2/project.h && cp -f ios/config.h libplatform/config.h;
   CMD
